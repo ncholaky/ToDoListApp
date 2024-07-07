@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct DetailView: View {
+    @Environment(\.dismiss) private var dismiss
+    
     var body: some View {
         VStack {
             Image(systemName: "swift")
@@ -16,8 +18,14 @@ struct DetailView: View {
                 .foregroundColor(.orange)
             Text("You are a Swifty legend!")
                 .font(.largeTitle)
+            
+            Spacer()
+            Button("Get Back"){
+                dismiss()
+            }
         }
         .padding()
+        .navigationBarBackButtonHidden()
     }
 }
 
