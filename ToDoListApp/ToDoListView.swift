@@ -10,7 +10,7 @@ import SwiftUI
 struct ToDoListView: View {
     var body: some View {
         
-        NavigationStack {
+        NavigationStack{
             List {
                 Section {
                     NavigationLink {
@@ -30,6 +30,8 @@ struct ToDoListView: View {
                 }
             
                 }
+            //navigationTitle must be added inside a NavigationStack, NOT BELOW IT
+            .navigationTitle("School Year")
             }
         }
     }
