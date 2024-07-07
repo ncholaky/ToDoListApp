@@ -12,21 +12,24 @@ struct ToDoListView: View {
         
         NavigationStack {
             List {
-                NavigationLink {
-                    DetailView()
-                } label: {
-                    Text("Winter")
+                Section {
+                    NavigationLink {
+                        DetailView()
+                    } label: {
+                        Text("Winter")
+                    }
+                    Text("Summer")
                 }
-
-                
-                Text("Summer")
-                Text("Spring")
-                Text("Fall")
+                Section {
+                    Text("Spring")
+                    Text("Fall")
+                }
+            
+                }
             }
         }
-       
     }
-}
+
 
 #Preview {
     ToDoListView()
