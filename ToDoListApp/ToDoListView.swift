@@ -12,24 +12,16 @@ struct ToDoListView: View {
         
         NavigationStack{
             List {
-                Section {
+                ForEach(0..<100, id:\.self) {
+                    number in
                     NavigationLink {
                         DetailView()
                     } label: {
-                        Text("Winter")
+                        Text("Item \(number)")
                     }
-                    Text("Summer")
-                } header: {
-                    Text("Breaks")
+                    
                 }
-                Section {
-                    Text("Spring")
-                    Text("Fall")
-                } header: {
-                    Text("Semesters")
-                }
-            
-                }
+            }
             //navigationTitle must be added inside a NavigationStack, NOT BELOW IT
             .navigationTitle("School Year")
             //This is the default, just to know it can be changed
