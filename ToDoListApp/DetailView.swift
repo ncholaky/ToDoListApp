@@ -23,6 +23,7 @@ struct DetailView: View {
             Button("Get Back"){
                 dismiss()
             }
+            .buttonStyle(.borderedProminent)
         }
         .padding()
         .navigationBarBackButtonHidden()
