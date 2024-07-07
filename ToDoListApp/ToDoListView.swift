@@ -19,10 +19,14 @@ struct ToDoListView: View {
                         Text("Winter")
                     }
                     Text("Summer")
+                } header: {
+                    Text("Breaks")
                 }
                 Section {
                     Text("Spring")
                     Text("Fall")
+                } header: {
+                    Text("Semesters")
                 }
             
                 }
