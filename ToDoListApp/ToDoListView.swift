@@ -13,7 +13,7 @@ struct ToDoListView: View {
         NavigationStack {
             VStack {
                 NavigationLink {
-                    Text("Welcome to the new view!")
+                    DetailView()
                 } label: {
                     Image(systemName: "eye")
                     Text("Show the new view!")
@@ -28,4 +28,10 @@ struct ToDoListView: View {
 
 #Preview {
     ToDoListView()
+}
+
+struct DetailView: View {
+    var body: some View {
+        Text("Welcome to the new view!")
+    }
 }
