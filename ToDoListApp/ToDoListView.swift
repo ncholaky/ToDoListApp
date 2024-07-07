@@ -30,8 +30,3 @@ struct ToDoListView: View {
     ToDoListView()
 }
 
-struct DetailView: View {
-    var body: some View {
-        Text("Welcome to the new view!")
-    }
-}
