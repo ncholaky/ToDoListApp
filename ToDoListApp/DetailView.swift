@@ -9,6 +9,8 @@ import SwiftUI
 
 struct DetailView: View {
     @Environment(\.dismiss) private var dismiss
+    //this value will come from the ToDoList
+    var passedValue: String
     
     var body: some View {
         VStack {
@@ -16,7 +18,7 @@ struct DetailView: View {
                 .resizable()
                 .scaledToFit()
                 .foregroundColor(.orange)
-            Text("You are a Swifty legend!")
+            Text("You are a Swifty legend!\nAnd you passed over the value \(passedValue)")
                 .font(.largeTitle)
             
             Spacer()
@@ -32,5 +34,5 @@ struct DetailView: View {
 
 
 #Preview {
-    DetailView()
+    DetailView(passedValue: "Item1")
 }

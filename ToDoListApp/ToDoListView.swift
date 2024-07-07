@@ -15,7 +15,7 @@ struct ToDoListView: View {
                 ForEach(0..<100, id:\.self) {
                     number in
                     NavigationLink {
-                        DetailView()
+                        DetailView(passedValue: "Item \(number)")
                     } label: {
                         Text("Item \(number)")
                     }
