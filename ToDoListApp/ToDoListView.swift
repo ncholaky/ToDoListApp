@@ -15,8 +15,10 @@ struct ToDoListView: View {
                 NavigationLink {
                     Text("Welcome to the new view!")
                 } label: {
+                    Image(systemName: "eye")
                     Text("Show the new view!")
                 }
+                .buttonStyle(.borderedProminent)
             }
             .padding()
         }
