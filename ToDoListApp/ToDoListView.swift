@@ -9,13 +9,18 @@ import SwiftUI
 
 struct ToDoListView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        
+        NavigationStack {
+            VStack {
+                NavigationLink {
+                    Text("Welcome to the new view!")
+                } label: {
+                    Text("Show the new view!")
+                }
+            }
+            .padding()
         }
-        .padding()
+       
     }
 }
 
