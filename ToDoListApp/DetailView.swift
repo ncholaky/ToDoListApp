@@ -11,6 +11,8 @@ struct DetailView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var toDo = ""
     @State private var reminderIsOn = false
+    //the Date type keeps track of day and time combined, we set it at one day from now (in seconds)
+    @State private var dueDate = Date.now + (60*60*24)
     //this value will come from the ToDoList
     var passedValue: String
     
@@ -21,6 +23,7 @@ struct DetailView: View {
                 .textFieldStyle(.roundedBorder)
             
             Toggle("Set Reminder", isOn: $reminderIsOn )
+            DatePicker("Date", selection: $dueDate )
         }
         .listStyle(.plain)
     }
