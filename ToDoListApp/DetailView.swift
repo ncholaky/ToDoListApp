@@ -13,6 +13,8 @@ struct DetailView: View {
     @State private var reminderIsOn = false
     //the Date type keeps track of day and time combined, we set it at one day from now (in seconds)
     @State private var dueDate = Date.now + (60*60*24)
+    @State private var notes = ""
+
     //this value will come from the ToDoList
     var passedValue: String
     
@@ -27,6 +29,14 @@ struct DetailView: View {
             Toggle("Set Reminder", isOn: $reminderIsOn )
                 .padding(.top)
             DatePicker("Date", selection: $dueDate )
+                .listRowSeparator(.hidden)
+            
+            Text("Notes")
+                .padding(.top)
+            
+            // The TextField will expand vertically as needed
+            TextField("Notes", text: $notes, axis: .vertical )
+                .textFieldStyle(.roundedBorder)
                 .listRowSeparator(.hidden)
         }
         .listStyle(.plain)
