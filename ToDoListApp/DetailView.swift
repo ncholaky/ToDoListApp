@@ -64,7 +64,8 @@ struct DetailView: View {
                     }
                 }
             }
-            .navigationBarBackButtonHidden(true)
+            .navigationBarBackButtonHidden()
+            .navigationBarTitleDisplayMode(.inline)
         }
         
     }
