@@ -27,8 +27,17 @@ struct ToDoListView: View {
             .navigationTitle("To Do List")
             //This is the default, just to know it can be changed
             .navigationBarTitleDisplayMode(/*@START_MENU_TOKEN@*/.automatic/*@END_MENU_TOKEN@*/)
-            .listStyle(.plain
-            )
+            .listStyle(.plain)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink {
+                        DetailView(passedValue: "")
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+
+                }
+            }
         }
     }
 }
