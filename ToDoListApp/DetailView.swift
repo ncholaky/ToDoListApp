@@ -58,6 +58,11 @@ struct DetailView: View {
                         dismiss()
                     }
                 }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Save") {
+                        //TODO: Add save code here
+                    }
+                }
             }
         }
         
