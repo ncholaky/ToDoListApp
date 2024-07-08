@@ -21,9 +21,13 @@ struct DetailView: View {
             TextField("Enter To Do here", text: $toDo)
                 .font(.title)
                 .textFieldStyle(.roundedBorder)
+                .padding(.vertical)
+                .listRowSeparator(.hidden)
             
             Toggle("Set Reminder", isOn: $reminderIsOn )
+                .padding(.top)
             DatePicker("Date", selection: $dueDate )
+                .listRowSeparator(.hidden)
         }
         .listStyle(.plain)
     }
