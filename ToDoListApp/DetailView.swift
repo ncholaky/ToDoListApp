@@ -20,37 +20,47 @@ struct DetailView: View {
     var passedValue: String
     
     var body: some View {
-        List {
-            TextField("Enter To Do here", text: $toDo)
-                .font(.title)
-                .textFieldStyle(.roundedBorder)
-                .padding(.vertical)
-                .listRowSeparator(.hidden)
-                .padding(.bottom)
-            
-            Toggle("Set Reminder", isOn: $reminderIsOn )
-                .padding(.top)
-            DatePicker("Date", selection: $dueDate )
-                .listRowSeparator(.hidden)
-                .padding(.bottom)
-            //Disable the datePicker if the set reminder is not set
-            //pass in the opposite of what the toggle shows
-                .disabled(!reminderIsOn)
-            
-            Text("Notes")
-                .padding(.top)
-            
-            // The TextField will expand vertically as needed
-            TextField("Notes", text: $notes, axis: .vertical )
-                .textFieldStyle(.roundedBorder)
-                .listRowSeparator(.hidden)
-            
-            Toggle("Completed", isOn: $isCompleted)
-                .padding(.top)
-                .listRowSeparator(.hidden)
-            
+        NavigationStack {
+            List {
+                TextField("Enter To Do here", text: $toDo)
+                    .font(.title)
+                    .textFieldStyle(.roundedBorder)
+                    .padding(.vertical)
+                    .listRowSeparator(.hidden)
+                    .padding(.bottom)
+                
+                Toggle("Set Reminder", isOn: $reminderIsOn )
+                    .padding(.top)
+                DatePicker("Date", selection: $dueDate )
+                    .listRowSeparator(.hidden)
+                    .padding(.bottom)
+                //Disable the datePicker if the set reminder is not set
+                //pass in the opposite of what the toggle shows
+                    .disabled(!reminderIsOn)
+                
+                Text("Notes")
+                    .padding(.top)
+                
+                // The TextField will expand vertically as needed
+                TextField("Notes", text: $notes, axis: .vertical )
+                    .textFieldStyle(.roundedBorder)
+                    .listRowSeparator(.hidden)
+                
+                Toggle("Completed", isOn: $isCompleted)
+                    .padding(.top)
+                    .listRowSeparator(.hidden)
+                
+            }
+            .listStyle(.plain)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button("Cancel") {
+                        dismiss()
+                    }
+                }
+            }
         }
-        .listStyle(.plain)
+        
     }
 }
 
