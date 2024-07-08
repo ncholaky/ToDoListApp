@@ -32,6 +32,10 @@ struct DetailView: View {
                 .padding(.top)
             DatePicker("Date", selection: $dueDate )
                 .listRowSeparator(.hidden)
+                .padding(.bottom)
+            //Disable the datePicker if the set reminder is not set
+            //pass in the opposite of what the toggle shows
+                .disabled(!reminderIsOn)
             
             Text("Notes")
                 .padding(.top)
