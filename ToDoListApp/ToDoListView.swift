@@ -20,7 +20,7 @@ struct ToDoListView: View {
                     } label: {
                         Text(toDo)
                     }
-                   
+                    .font(.title2)
                 }
             }
             //navigationTitle must be added inside a NavigationStack, NOT BELOW IT
