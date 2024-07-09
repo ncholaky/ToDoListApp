@@ -20,7 +20,6 @@ struct DetailView: View {
     var passedValue: String
     
     var body: some View {
-        NavigationStack {
             List {
                 TextField("Enter To Do here", text: $toDo)
                     .font(.title)
@@ -69,7 +68,6 @@ struct DetailView: View {
         }
         
     }
-}
 
 
 #Preview {
