@@ -71,5 +71,7 @@ struct DetailView: View {
 
 
 #Preview {
-    DetailView(passedValue: "Item1")
+    NavigationStack {
+        DetailView(passedValue: "Item1")
+    }
 }

@@ -39,8 +39,9 @@ struct ToDoListView: View {
 
                 }
             }
-            .sheet(isPresented: $sheetIsPresented) {
+            .sheet(isPresented: $sheetIsPresented) {NavigationStack {
                 DetailView(passedValue: "")
+            }
             }
         }
     }
